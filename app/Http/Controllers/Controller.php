@@ -10,4 +10,12 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    /**
+     * Number of items per page,
+     * used in pagination.
+     *
+     * @var int
+     */
+    protected $perPage = 10;
 }

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -15,6 +16,27 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     protected $namespace = 'App\Http\Controllers';
+
+    /**
+     * This namespace is applied to your api controller routes.
+     *
+     * @var string
+     */
+    protected $apiControllersNamespace = 'App\Http\Controllers\Api';
+
+    /**
+     * This namespace is applied to your web controller routes.
+     *
+     * @var string
+     */
+    protected $webControllersNamespace = 'App\Http\Controllers\Web';
+
+    /**
+     * This namespace is applied to your dashboard controller routes.
+     *
+     * @var string
+     */
+    protected $dashboardControllersNamespace = 'App\Http\Controllers\Dashboard';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -39,6 +61,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        $this->mapDashboardRoutes();
+
         //
     }
 
@@ -52,8 +76,31 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
         Route::middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
+            ->namespace($this->webControllersNamespace)
+            ->group(base_path('routes/web.php'));
+    }
+
+    /**
+     * Define the "dashboard" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapDashboardRoutes()
+    {
+        Route::middleware(['web', 'auth'])
+            ->prefix('dashboard')
+            ->as('dashboard.')
+            ->namespace($this->dashboardControllersNamespace)
+            ->group(base_path('routes/dashboard.php'));
+
+        Route::middleware('web')
+            ->prefix('dashboard')
+            ->namespace($this->dashboardControllersNamespace)
+            ->group(function () {
+                Auth::routes();
+            });
     }
 
     /**
@@ -66,8 +113,14 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapApiRoutes()
     {
         Route::prefix('api')
-             ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
+            ->middleware('api')
+            ->as('api.')
+            ->namespace($this->apiControllersNamespace)
+            ->group(base_path('routes/api.php'));
+
+        Route::prefix('api/auth')
+            ->middleware('authorization')
+            ->as('api.auth.')
+            ->namespace($this->apiControllersNamespace);
     }
 }
