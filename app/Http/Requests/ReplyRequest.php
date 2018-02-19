@@ -2,8 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Foundation\Http\FormRequest;
 
-class PostRequest extends Request
+class ReplyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,21 +23,8 @@ class PostRequest extends Request
      */
     public function rules()
     {
-        return $this->getAproperRules();
-    }
-
-    /**
-     * Return the rules of create request.
-     *
-     * @return array
-     */
-    public function createRules()
-    {
         return [
-            'title' => 'required|max:200',
-            'categories' => 'required',
-            'content' => 'required|min:200|max:20000',
-            'image' => 'required'
+            'content' => 'required|max:500'
         ];
     }
 }

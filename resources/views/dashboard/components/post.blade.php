@@ -84,7 +84,7 @@
             @forelse($post->comments->where('approved', true) as $comment)
             <li class="media">
                 <div class="media-left">
-                    <a href="#"><img src="{{ $comment->user->getMedia()->first() }}" class="img-circle img-sm" alt=""></a>
+                    <a href="#"><img src="{{ $comment->user->getMedia()->first()->getUrl() }}" class="img-circle img-sm" alt=""></a>
                 </div>
 
                 <div class="media-body">
@@ -95,17 +95,12 @@
 
                     <p>{{ $comment->content }}</p>
 
-                    <ul class="list-inline list-inline-separate text-size-small">
-                        <li><a href="#">Reply</a></li>
-                        @if(auth()->id() == $comment->user->id)<li><a href="#">Edit</a></li>@endif
-                    </ul>
-
                     @if($comment->replies->count())
                         @foreach($comment->replies as $reply)
                         <div class="media">
                             <div class="media-left">
                                 <a href="#">
-                                    <img src="{{ $reply->user->getMedia()->first() }}" alt="" class="img-circle img-sm">
+                                    <img src="{{ $reply->user->getMedia()->first()->getUrl() }}" alt="" class="img-circle img-sm">
                                 </a>
                             </div>
                             <div class="media-body">
@@ -115,13 +110,21 @@
                                 </div>
                                 <p>{{ $reply->content }}</p>
                                 <ul class="list-inline list-inline-separate text-size-small">
-                                    @if(auth()->id() == $comment->user->id)<li><a href="#">Edit</a></li>@endif
                                 </ul>
                             </div>
                         </div>
                         @endforeach
                     @endif
                 </div>
+                {{ Form::open(['url' => route('dashboard.replies.store', $comment)]) }}
+                <div class="input-group col-md-11 col-md-offset-1">
+                        <input name="content" class="form-control" placeholder="Your reply goes here...">
+                    <span class="input-group-btn">
+                        <button class="btn bg-blue">reply <i class="icon-plus22"></i></button>
+                    </span>
+                </div>
+
+                {{ Form::close() }}
             </li>
                 @empty
                     <p class="text-center">
