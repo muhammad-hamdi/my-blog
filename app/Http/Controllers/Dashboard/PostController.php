@@ -41,10 +41,12 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-        $post = Post::create([
+        $post = auth()->user()->posts()->create([
             'title' => $request->title,
             'content' => $request->input('content')
         ]);
+
+        $post->addMediaFromRequest('image')->toMediaCollection();
 
         $post->categories()->sync($request->categories);
 
@@ -54,23 +56,28 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param $id
      * @return \Illuminate\Http\Response
+     * @internal param Post $post
+     * @internal param int $id
      */
     public function show($id)
     {
-        //
+        $post = Post::where('id', $id)->where('deleted', false)->firstOrFail();
+
+        return view('dashboard.posts.show', compact('post'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param Post $post
      * @return \Illuminate\Http\Response
+     * @internal param int $id
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        return view('dashboard.posts.edit', compact('post'));
     }
 
     /**
@@ -88,11 +95,15 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Post $post
+     * @return \Illuminate\Http\RedirectResponse
+     * @internal param int $id
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        $post->deleted = true;
+        $post->save();
+
+        return $this->redirectToIndexWithFlash('deleted');
     }
 }

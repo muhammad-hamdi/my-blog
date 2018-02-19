@@ -23,12 +23,12 @@
             @slot('tbody')
                 @foreach($posts as $post)
                     <tr>
-                        <td>{{ $post->title }}</td>
-                        <td>{{ $post->user()->name }}</td>
-                        <td>{{ $post->created_at->diffForHumans() }}</td>
+                        <td><a href="{{ route('dashboard.posts.show', $post) }}">{{ $post->title }}</a></td>
+                        <td>{{ $post->user->name }}</td>
+                        <td>{{ $post->created_at->toFormattedDateString() }}</td>
                         <td class="visible-on-hover table-actions">
                             <a
-                                    href="#"
+                                    href="{{ route('dashboard.posts.edit', $post) }}"
                                     class="btn btn-primary btn-xs"
                             >
                                 @lang('forms.edit')
@@ -38,8 +38,8 @@
                                     href="javascript:void(0)"
                                     class="delete-confirm btn btn-danger btn-xs"
                                     data-url="#"
-                                    data-title="@lang('roles.messages.ask.delete-title')"
-                                    data-message="@lang('roles.messages.ask.delete-info')"
+                                    data-title="@lang('posts.messages.ask.delete-title')"
+                                    data-message="@lang('posts.messages.ask.delete-info')"
                             >
                                 @lang('forms.delete')
                                 <i class="icon-trash"></i>

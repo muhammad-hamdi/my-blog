@@ -8,4 +8,9 @@ use App\Models\Relations\CommentRelations;
 class Comment extends Model
 {
     use CommentRelations;
+
+    protected $fillable = [
+        'content',
+        'user_id'
+    ];
 }

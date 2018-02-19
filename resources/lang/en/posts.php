@@ -13,5 +13,12 @@ return [
         'title' => 'Post Title',
         'author' => 'Author',
         'date' => 'Date'
+    ],
+
+    'messages' => [
+        'ask' => [
+            'delete-title' => 'Are you sure to delete this post ?',
+            'delete-info' => 'You can still see this post in the archives page'
+        ]
     ]
 ];

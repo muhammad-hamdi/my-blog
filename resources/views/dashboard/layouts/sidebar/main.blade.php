@@ -37,6 +37,7 @@
                                     <span>@lang('posts.actions.create')</span>
                                 </a>
                             </li>
+
                         </ul>
                     </li>
 

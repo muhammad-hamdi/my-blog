@@ -39,7 +39,7 @@
 
         <!-- Core JS files -->
         <script type="text/javascript" src="{{ asset('assets/dashboard/js/app.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('assets/dashboard/js/custom.js') }}"></script>
+        {{--<script type="text/javascript" src="{{ asset('assets/dashboard/js/custom.js') }}"></script>--}}
         <!-- /core JS files -->
 
         <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>

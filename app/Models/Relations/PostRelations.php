@@ -3,6 +3,7 @@ namespace App\Models\Relations;
 
 use App\Models\Category;
 use App\Models\Comment;
+use App\Models\Like;
 use App\Models\User;
 
 trait PostRelations
@@ -25,6 +26,16 @@ trait PostRelations
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    /**
+     * Post has many likes.
+     *
+     * @return mixed
+     */
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
     }
 
     /**

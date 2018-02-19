@@ -10,4 +10,9 @@ use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
 class Post extends Model implements HasMedia
 {
     use PostRelations, HasMediaTrait;
+
+    protected $fillable = [
+        'title',
+        'content'
+    ];
 }

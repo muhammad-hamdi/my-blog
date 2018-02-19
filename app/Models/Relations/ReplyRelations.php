@@ -2,14 +2,14 @@
 
 namespace App\Models\Relations;
 
+use App\Models\Comment;
 use App\Models\Post;
-use App\Models\Reply;
 use App\Models\User;
 
-trait CommentRelations
+trait ReplyRelations
 {
     /**
-     * Comment belongs to one user.
+     * Reply belongs to one user.
      *
      * @return mixed
      */
@@ -19,7 +19,7 @@ trait CommentRelations
     }
 
     /**
-     * Comment belongs to one post.
+     * Reply belongs to one post.
      *
      * @return mixed
      */
@@ -29,12 +29,12 @@ trait CommentRelations
     }
 
     /**
-     * Comment has many replies
+     * Reply belongs to one comment.
      *
      * @return mixed
      */
-    public function replies()
+    public function comment()
     {
-        return $this->hasMany(Reply::class);
+        return $this->belongsTo(Comment::class);
     }
 }

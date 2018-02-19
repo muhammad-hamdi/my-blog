@@ -24,13 +24,13 @@
             </div>
             <div class="panel-body">
                 {{ Form::open(['url' => route('dashboard.posts.store'), 'files' => true]) }}
-                    {{ Form::bsText('Title', 'title', '', ['autofocus']) }}
+                    {{ Form::bsText('Title', 'title', $post->title, ['autofocus']) }}
 
-                    {{ Form::bsMultipleSelect('Categories', 'categories', $categories) }}
+                    {{ Form::bsMultipleSelect('Categories', 'categories', $categories, $post->categories) }}
 
-                    {{ Form::bsTextarea('Post Content', 'content') }}
+                    {{ Form::bsTextarea('Post Content', 'content', $post->content) }}
 
-                    {{ Form::bsImage('Post image', 'image') }}
+                    {{ Form::bsImage('Post image', 'image', $post->getMedia()->first()->getUrl()) }}
 
                     {{ Form::bsSubmit('Submit Form') }}
                 {{ Form::close() }}
