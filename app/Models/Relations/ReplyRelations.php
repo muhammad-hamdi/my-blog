@@ -19,16 +19,6 @@ trait ReplyRelations
     }
 
     /**
-     * Reply belongs to one post.
-     *
-     * @return mixed
-     */
-    public function post()
-    {
-        return $this->belongsTo(Post::class);
-    }
-
-    /**
      * Reply belongs to one comment.
      *
      * @return mixed
