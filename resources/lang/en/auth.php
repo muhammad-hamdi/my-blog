@@ -24,7 +24,7 @@ return [
         'Login to your account' => 'Login to your account',
         'Enter your credentials below' => 'Enter your credentials below',
         'Remember me' => 'Remember me',
-        'Forgot password' => 'Forgot password'
+        'Forgot password' => 'Forgot password',
     ],
 
 ];

@@ -3,8 +3,8 @@
 namespace App\Models\Relations;
 
 use App\Models\Post;
-use App\Models\Reply;
 use App\Models\User;
+use App\Models\Reply;
 
 trait CommentRelations
 {
@@ -29,7 +29,7 @@ trait CommentRelations
     }
 
     /**
-     * Comment has many replies
+     * Comment has many replies.
      *
      * @return mixed
      */

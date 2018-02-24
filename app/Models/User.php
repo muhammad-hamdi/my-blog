@@ -42,5 +42,5 @@ class User extends Authenticatable implements HasMedia
     const ADMIN_USER = 1;
     const AUTHOR_USER = 2;
     const NORMAL_USER = 3;
-    /** End User Roles */
+    /* End User Roles */
 }

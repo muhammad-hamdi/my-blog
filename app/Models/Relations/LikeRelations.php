@@ -8,7 +8,7 @@ use App\Models\User;
 trait LikeRelations
 {
     /**
-     * like belongs to one post
+     * like belongs to one post.
      *
      * @return mixed
      */
@@ -18,7 +18,7 @@ trait LikeRelations
     }
 
     /**
-     * like belongs to one user
+     * like belongs to one user.
      *
      * @return mixed
      */

@@ -79,5 +79,4 @@ class Request extends FormRequest
     {
         return $this->isMethod('post');
     }
-
 }

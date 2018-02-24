@@ -41,7 +41,7 @@ class Controller extends BaseController
      */
     public function flash($event = 'created', $level = 'success', $lang = null)
     {
-        if ( ! $lang) {
+        if (! $lang) {
             $lang = $this->guessLangName();
         }
 
@@ -57,7 +57,7 @@ class Controller extends BaseController
      */
     public function redirectToIndex($resource = null)
     {
-        if ( ! $resource) {
+        if (! $resource) {
             $resource = $this->guessResourceName();
         }
 
@@ -66,7 +66,7 @@ class Controller extends BaseController
 
     public function redirectToBack($resource = null)
     {
-        if ( ! $resource) {
+        if (! $resource) {
             $resource = $this->guessResourceName();
         }
 

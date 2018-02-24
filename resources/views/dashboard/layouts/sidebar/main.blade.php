@@ -63,6 +63,28 @@
                         </ul>
                     </li>
 
+                    <li class="{{ css_resource_active('dashboard.categories') }}">
+                        <a href="javascript:">
+                            <i class="icon-stack3"></i>
+                            <span>@lang('categories.plural')</span>
+                        </a>
+                        <ul>
+                            <li class="{{ css_route_active('dashboard.categories.index') }}">
+                                <a href="{{ route('dashboard.categories.index') }}">
+                                    <i class="icon-list"></i>
+                                    <span>@lang('categories.actions.list')</span>
+                                </a>
+                            </li>
+                            <li class="{{ css_route_active('dashboard.categories.create') }}">
+                                <a href="{{ route('dashboard.categories.create') }}">
+                                    <i class="icon-plus2"></i>
+                                    <span>@lang('categories.actions.create')</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
                 <!-- /main -->
                 </ul>
             </div>

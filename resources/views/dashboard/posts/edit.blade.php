@@ -1,4 +1,4 @@
-@php($title = trans('posts.actions.update'))
+@php($title = trans('posts.actions.edit'))
 @extends('dashboard.layouts.main')
 
 @section('content')
@@ -23,12 +23,12 @@
                 <h5>@lang('posts.actions.update')</h5>
             </div>
             <div class="panel-body">
-                {{ Form::open(['url' => route('dashboard.posts.update'), 'files' => true]) }}
+                {{ Form::open(['url' => route('dashboard.posts.update', $post), 'method' => 'put', 'files' => true]) }}
                     {{ Form::bsText('Title', 'title', $post->title, ['autofocus']) }}
 
                     {{ Form::bsMultipleSelect('Categories', 'categories', $categories, $post->categories) }}
 
-                    {{ Form::bsTextarea('Post Content', 'content', $post->content) }}
+                    {{ Form::bsTextarea('Post Content', 'content', $post->content, ['id' => 'editor']) }}
 
                     {{ Form::bsImage('Post image', 'image', $post->getMedia()->first()->getUrl()) }}
 
@@ -37,5 +37,11 @@
             </div>
         </div>
     @endcomponent
+
+    @push('scripts')
+        <script>
+            CKEDITOR.replace('editor');
+        </script>
+    @endpush
 
 @endsection

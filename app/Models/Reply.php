@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use App\Models\Relations\ReplyRelations;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Relations\ReplyRelations;
 
 class Reply extends Model
 {
     use ReplyRelations;
     protected $fillable = [
         'content',
-        'user_id'
+        'user_id',
     ];
 }

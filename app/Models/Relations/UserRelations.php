@@ -2,10 +2,10 @@
 
 namespace App\Models\Relations;
 
-use App\Models\Comment;
 use App\Models\Like;
 use App\Models\Post;
 use App\Models\Reply;
+use App\Models\Comment;
 
 trait UserRelations
 {

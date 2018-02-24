@@ -6,19 +6,20 @@ return [
 
     'actions' => [
         'list' => 'List Blog Posts',
-        'create' => 'Add Post'
+        'create' => 'Add Post',
+        'edit' => 'Update Post'
     ],
 
     'attributes' => [
         'title' => 'Post Title',
         'author' => 'Author',
-        'date' => 'Date'
+        'date' => 'Date',
     ],
 
     'messages' => [
         'ask' => [
             'delete-title' => 'Are you sure to delete this post ?',
-            'delete-info' => 'You can still see this post in the archives page'
-        ]
-    ]
+            'delete-info' => 'You can still see this post in the bin page',
+        ],
+    ],
 ];

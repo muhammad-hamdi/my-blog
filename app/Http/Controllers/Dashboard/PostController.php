@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Requests\PostRequest;
-use App\Models\Category;
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
@@ -43,7 +43,7 @@ class PostController extends Controller
     {
         $post = auth()->user()->posts()->create([
             'title' => $request->title,
-            'content' => $request->input('content')
+            'content' => $request->input('content'),
         ]);
 
         $post->addMediaFromRequest('image')->toMediaCollection();

@@ -1,6 +1,6 @@
 <?php
 
-if ( ! function_exists('send_sms')) {
+if (! function_exists('send_sms')) {
     /**
      * Send a message to a given user or mobile number.
      *
@@ -24,7 +24,7 @@ if ( ! function_exists('send_sms')) {
     }
 }
 
-if ( ! function_exists('get_supported_languages')) {
+if (! function_exists('get_supported_languages')) {
 
     /**
      * Get the supported language by the application.
@@ -37,7 +37,7 @@ if ( ! function_exists('get_supported_languages')) {
     }
 }
 
-if ( ! function_exists('get_query_string_value')) {
+if (! function_exists('get_query_string_value')) {
 
     /**
      * Extract a query string value from a given url.
@@ -55,7 +55,7 @@ if ( ! function_exists('get_query_string_value')) {
     }
 }
 
-if ( ! function_exists('css_route_active')) {
+if (! function_exists('css_route_active')) {
 
     /**
      * Generate html element class if route is equals to a given route.
@@ -71,7 +71,7 @@ if ( ! function_exists('css_route_active')) {
     }
 }
 
-if ( ! function_exists('css_resource_active')) {
+if (! function_exists('css_resource_active')) {
 
     /**
      * Generate html element class if route is in a given resource.
@@ -96,7 +96,7 @@ if ( ! function_exists('css_resource_active')) {
     }
 }
 
-if ( ! function_exists('html_to_text')) {
+if (! function_exists('html_to_text')) {
     /**
      * Remove dangerous tags (with attributes) from html.
      *
@@ -110,7 +110,7 @@ if ( ! function_exists('html_to_text')) {
     }
 }
 
-if ( ! function_exists('validate_base64')) {
+if (! function_exists('validate_base64')) {
 
     /**
      * Validate a base64 content.
@@ -162,7 +162,7 @@ if ( ! function_exists('validate_base64')) {
     }
 }
 
-if ( ! function_exists('languages')) {
+if (! function_exists('languages')) {
 
     /**
      * Returns an array of all locales languages.
@@ -175,7 +175,7 @@ if ( ! function_exists('languages')) {
     }
 }
 
-if ( ! function_exists('language')) {
+if (! function_exists('language')) {
 
     /**
      * Returns locale language code.

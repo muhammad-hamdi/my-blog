@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Requests\CommentRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Http\Requests\CommentRequest;
 
 class CommentController extends Controller
 {
@@ -19,7 +19,7 @@ class CommentController extends Controller
     {
         $post->comments()->create([
             'content' => $request->input('content'),
-            'user_id' => auth()->id()
+            'user_id' => auth()->id(),
         ]);
 
         return back();

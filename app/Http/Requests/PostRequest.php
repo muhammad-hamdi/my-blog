@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-
 class PostRequest extends Request
 {
     /**
@@ -36,7 +35,7 @@ class PostRequest extends Request
             'title' => 'required|max:200',
             'categories' => 'required',
             'content' => 'required|min:200|max:20000',
-            'image' => 'required'
+            'image' => 'required',
         ];
     }
 }

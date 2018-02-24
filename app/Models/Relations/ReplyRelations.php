@@ -2,9 +2,9 @@
 
 namespace App\Models\Relations;
 
-use App\Models\Comment;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Comment;
 
 trait ReplyRelations
 {

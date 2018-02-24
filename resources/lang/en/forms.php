@@ -2,5 +2,5 @@
 
 return [
     'edit' => 'Edit',
-    'delete' => 'Delete'
+    'delete' => 'Delete',
 ];

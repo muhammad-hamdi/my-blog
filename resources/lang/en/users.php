@@ -3,6 +3,6 @@
 return [
     'attributes' => [
         'email' => 'Email',
-        'password' => 'Password'
-    ]
+        'password' => 'Password',
+    ],
 ];

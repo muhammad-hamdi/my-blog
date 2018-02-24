@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Requests\ReplyRequest;
 use App\Models\Comment;
 use Illuminate\Http\Request;
+use App\Http\Requests\ReplyRequest;
 
 class ReplyController extends Controller
 {
-
     /**
      * Store a newly created resource in storage.
      *
@@ -20,7 +19,7 @@ class ReplyController extends Controller
     {
         $comment->replies()->create([
             'content' => $request->input('content'),
-            'user_id' => auth()->id()
+            'user_id' => auth()->id(),
         ]);
 
         return back();

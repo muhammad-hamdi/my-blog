@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-
 class CommentRequest extends Request
 {
     /**
@@ -23,7 +22,7 @@ class CommentRequest extends Request
     public function rules()
     {
         return [
-            'content' => 'required|max:2000'
+            'content' => 'required|max:2000',
         ];
     }
 }

@@ -8,8 +8,8 @@ class UsersTableSeeder extends Seeder
     /**
      * Run the database seeds.
      *
-     * @return void
      * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded
+     * @return void
      */
     public function run()
     {

@@ -20,7 +20,7 @@
         @component('dashboard.components.post', ['post' => $post])
             @slot('content')
                 <pre style="white-space: pre-line">
-                    {{ $post->content }}
+                    {!! $post->content !!}
                 </pre>
             @endslot
         @endcomponent

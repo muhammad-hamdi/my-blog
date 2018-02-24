@@ -1,15 +1,16 @@
 <?php
+
 namespace App\Models\Relations;
 
-use App\Models\Category;
-use App\Models\Comment;
 use App\Models\Like;
 use App\Models\User;
+use App\Models\Comment;
+use App\Models\Category;
 
 trait PostRelations
 {
     /**
-     * Post belongs to one user
+     * Post belongs to one user.
      *
      * @return mixed
      */

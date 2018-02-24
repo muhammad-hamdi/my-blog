@@ -7,7 +7,7 @@ use App\Models\Post;
 trait CategoryRelations
 {
     /**
-     * Category belongs to many posts
+     * Category belongs to many posts.
      *
      * @return mixed
      */

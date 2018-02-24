@@ -23,7 +23,7 @@
                 <h5>@lang('categories.actions.edit')</h5>
             </div>
             <div class="panel-body">
-                {{ Form::open(['url' => route('dashboard.categories.update')]) }}
+                {{ Form::open(['url' => route('dashboard.categories.update', $category), 'method' => 'put']) }}
                     {{ Form::bsText('Name', 'name', $category->name, ['autofocus']) }}
 
                     {{ Form::bsSubmit('Submit Form') }}

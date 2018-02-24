@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Models\Relations\PostRelations;
+use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
 
@@ -13,6 +13,6 @@ class Post extends Model implements HasMedia
 
     protected $fillable = [
         'title',
-        'content'
+        'content',
     ];
 }

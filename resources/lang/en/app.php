@@ -2,5 +2,5 @@
 
 return [
     'owner' => 'Muhammad Hamdi',
-    'main' => 'Main'
+    'main' => 'Main',
 ];
