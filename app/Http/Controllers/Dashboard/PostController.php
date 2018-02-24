@@ -83,13 +83,16 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param PostRequest|Request $request
+     * @param Post $post
+     * @return \Illuminate\Http\RedirectResponse
+     * @internal param int $id
      */
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        $post->update($request->all());
+
+        return $this->redirectToIndexWithFlash('updated');
     }
 
     /**

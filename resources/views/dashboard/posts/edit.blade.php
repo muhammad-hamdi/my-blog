@@ -1,4 +1,4 @@
-@php($title = trans('posts.actions.create'))
+@php($title = trans('posts.actions.update'))
 @extends('dashboard.layouts.main')
 
 @section('content')
@@ -13,17 +13,17 @@
             </li>
             <li>
                 <a href="javascript:">
-                    @lang('posts.actions.create')
+                    @lang('posts.actions.update')
                 </a>
             </li>
         @endslot
 
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h5>@lang('posts.actions.create')</h5>
+                <h5>@lang('posts.actions.update')</h5>
             </div>
             <div class="panel-body">
-                {{ Form::open(['url' => route('dashboard.posts.store'), 'files' => true]) }}
+                {{ Form::open(['url' => route('dashboard.posts.update'), 'files' => true]) }}
                     {{ Form::bsText('Title', 'title', $post->title, ['autofocus']) }}
 
                     {{ Form::bsMultipleSelect('Categories', 'categories', $categories, $post->categories) }}

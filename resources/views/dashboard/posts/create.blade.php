@@ -28,7 +28,7 @@
 
                     {{ Form::bsMultipleSelect('Categories', 'categories', $categories) }}
 
-                    {{ Form::bsTextarea('Post Content', 'content') }}
+                    {{ Form::bsTextarea('Post Content', 'content', '', ['id' => 'editor']) }}
 
                     {{ Form::bsImage('Post image', 'image') }}
 
@@ -37,5 +37,11 @@
             </div>
         </div>
     @endcomponent
+
+    @push('scripts')
+        <script>
+            CKEDITOR.replace('editor');
+        </script>
+    @endpush
 
 @endsection

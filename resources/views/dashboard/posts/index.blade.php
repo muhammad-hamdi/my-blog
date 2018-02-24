@@ -37,7 +37,7 @@
                             <a
                                     href="javascript:void(0)"
                                     class="delete-confirm btn btn-danger btn-xs"
-                                    data-url="#"
+                                    data-url="{{ route('dashboard.posts.destroy') }}"
                                     data-title="@lang('posts.messages.ask.delete-title')"
                                     data-message="@lang('posts.messages.ask.delete-info')"
                             >
